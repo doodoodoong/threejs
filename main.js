@@ -1,5 +1,8 @@
 import * as THREE from "three";
 import { hello1 } from "./hello.js";
+import message from "./src/message.js";
+
+message("1minute");
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
