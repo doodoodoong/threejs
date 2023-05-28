@@ -1,4 +1,3 @@
-// import camera from "./src/Camera.js";
-import BrowserSize from "./src/BrowserSize.js";
+import Light from "./src/Light";
 
-BrowserSize();
+Light();

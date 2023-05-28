@@ -1,8 +1,11 @@
 import * as THREE from "three";
 
-function BrowserSize() {
+function Light() {
   const canvas = document.querySelector("#three-canvas");
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+  });
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
@@ -18,11 +21,16 @@ function BrowserSize() {
 
   camera.position.z = 5;
   camera.position.y = 2;
-  camera.position.x = 1;
+  camera.position.x = 2;
   scene.add(camera);
 
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.x = 1;
+  light.position.z = 2;
+  scene.add(light);
+
   const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({
+  const material = new THREE.MeshStandardMaterial({
     color: "red",
   });
   const mesh = new THREE.Mesh(geometry, material);
@@ -39,4 +47,4 @@ function BrowserSize() {
   window.addEventListener("resize", setSize);
 }
 
-export default BrowserSize;
+export default Light;

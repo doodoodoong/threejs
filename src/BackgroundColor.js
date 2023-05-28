@@ -1,13 +1,20 @@
 import * as THREE from "three";
 
-function BrowserSize() {
+function BackgroundColor() {
   const canvas = document.querySelector("#three-canvas");
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: true,
+    alpha: true,
+  });
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
+  renderer.setClearColor(0x00ff00);
+  renderer.setClearAlpha(0.5);
 
   const scene = new THREE.Scene();
+  scene.background = new THREE.Color("blue");
 
   const camera = new THREE.PerspectiveCamera(
     75,
@@ -39,4 +46,4 @@ function BrowserSize() {
   window.addEventListener("resize", setSize);
 }
 
-export default BrowserSize;
+export default BackgroundColor;
