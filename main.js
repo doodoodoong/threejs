@@ -1,3 +1,3 @@
-import Light from "./src/Light";
+import Library from "./src/Library.js";
 
-Light();
+Library();
