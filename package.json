@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dat.gui": "^0.7.9",
     "gsap": "^3.11.5",
+    "stats.js": "^0.17.0",
     "three": "^0.152.2"
   },
   "devDependencies": {
