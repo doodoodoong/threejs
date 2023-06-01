@@ -1,8 +1,8 @@
 import * as THREE from "three";
 import dat from "dat.gui";
 
-// Rotation
-function Rotation_Trans() {
+// Group
+function Scene_Graph() {
   const canvas = document.querySelector("#three-canvas");
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -50,15 +50,8 @@ function Rotation_Trans() {
   gui.add(camera.position, "z", -10, 10, 0.01).name("Camera Z Position");
 
   const clock = new THREE.Clock();
-  mesh.rotation.reorder("YXZ");
-  mesh.rotation.y = THREE.MathUtils.degToRad(45);
-  mesh.rotation.x = THREE.MathUtils.degToRad(20);
   function draw() {
     const delta = clock.getDelta();
-    // mesh.rotation.x = THREE.MathUtils.degToRad(45);
-    // mesh.rotation.x = Math.PI / 5;
-    //. mesh.rotation.x = 1;
-    //  mesh.rotation.x += delta;
 
     renderer.render(scene, camera);
     renderer.setAnimationLoop(draw);
@@ -75,4 +68,4 @@ function Rotation_Trans() {
   draw();
 }
 
-export default Rotation_Trans;
+export default Scene_Graph;
