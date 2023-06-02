@@ -2,7 +2,7 @@ import * as THREE from "three";
 import dat from "dat.gui";
 
 // Group
-function Scene_Graph() {
+function Various_Geometry() {
   const canvas = document.querySelector("#three-canvas");
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -88,4 +88,4 @@ function Scene_Graph() {
   draw();
 }
 
-export default Scene_Graph;
+export default Various_Geometry;
