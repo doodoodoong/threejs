@@ -1,3 +1,3 @@
-import Geometry_shape1 from "./src/geometry/Geometry_shape1";
+import OrbitControls from "./src/camera_control/OrbitControls";
 
-Geometry_shape1();
+OrbitControls();
