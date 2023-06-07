@@ -1,3 +1,3 @@
-import OrbitControls from "./src/camera_control/OrbitControls";
+import OrbitControl from "./src/camera_control/OrbitControl";
 
-OrbitControls();
+OrbitControl();
