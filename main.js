@@ -1,3 +1,3 @@
-import Various_Geometry from "./src/geometry/Various_Geometry";
+import Geometry_shape1 from "./src/geometry/Geometry_shape1";
 
-Various_Geometry();
+Geometry_shape1();
