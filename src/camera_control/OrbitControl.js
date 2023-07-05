@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { DragControls } from "three/addons/controls/DragControls";
 // ----- 주제: OrbitControls
 
 export default function OrbitControl() {
@@ -36,16 +36,7 @@ export default function OrbitControl() {
   scene.add(directionalLight);
 
   // Controls
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.enableZoom = true;
-  controls.maxDistance = 10;
-  controls.minDistance = 2;
-  //  controls.minPolarAngle = Math.PI / 4;
-  controls.minPolarAngle = THREE.MathUtils.degToRad(45);
-  controls.target.set(2, 2, 2);
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 5;
+  const controls = new DragControls(meshes, camera, renderer.domElement);
   // Mesh
   const geometry = new THREE.BoxGeometry(1, 1, 1);
   let mesh;
@@ -68,7 +59,6 @@ export default function OrbitControl() {
 
   function draw() {
     const delta = clock.getDelta();
-    controls.update();
     renderer.render(scene, camera);
     renderer.setAnimationLoop(draw);
   }
